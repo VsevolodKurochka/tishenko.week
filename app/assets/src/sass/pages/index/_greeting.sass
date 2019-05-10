@@ -3,6 +3,7 @@ $banner-md-offset: 40px
 .greeting
 	+py(35px)
 	+bgc($color-brand-1)
+	background-image: linear-gradient(0deg, darken($color-brand-1, 10%), $color-brand-1);
 
 	+min(md)
 		+py(120px, 80px)
@@ -17,7 +18,7 @@ $banner-md-offset: 40px
 			z-index: -1
 			+min(sm)
 				left: -45%
-				top: -100px
+				top: -120px
 				+size(1200px, 500px)
 
 	&__row
