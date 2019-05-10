@@ -1,0 +1,47 @@
+.greeting
+	+py(35px)
+	+bgc($color-brand-1)
+
+	+min(md)
+		+py(90px, 80px)
+
+	&__container
+		+r()
+		z-index: 1
+		&:before
+			+pseudo("", 0, null, null, 0)
+			+bgc(#fff)
+			transform: skew(-15deg)
+			z-index: -1
+			+min(sm)
+				left: -45%
+				top: -45%
+				+size(1200px, 500px)
+
+	&__title
+		+lh(1.1)
+		+ff('black')
+		+mb(15px)
+		+min(md)
+			+mb(30px)
+			+fs(64px)
+
+		&-highlight
+			background: linear-gradient(45deg, #8d091d, #f70f31)
+			-webkit-background-clip: text
+			-webkit-text-fill-color: transparent
+
+	&__subtitle
+		+r()
+		+lh(1.1)
+		+ff('bold')
+		&:before
+			+pseudo("", 50%, null, null, 0)
+			+size(7.5px, 80px)
+			+bgc($color-brand-1)
+			transform: skew(-15deg)
+			+min(md)
+				transform: translateY(-50%) skew(-15deg)
+		+min(md)
+			+fs(30px)
+			+pl(45px)
