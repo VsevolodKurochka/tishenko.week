@@ -1,0 +1,45 @@
+{% import "macros/macros.form.twig" as form %}
+{%
+  set inputs = [
+    {
+      'name': 'name',
+      'value': '',
+      'type': 'text',
+      'attributes': {
+        'placeholder': 'Имя',
+        'class': 'form__control'
+      }
+    },
+    {
+      'name': 'email',
+      'value': '',
+      'type': 'email',
+      'attributes': {
+        'placeholder': 'Email',
+        'class': 'form__control'
+      }
+    },
+    {
+      'name': 'phone',
+      'value': '',
+      'type': 'phone',
+      'attributes': {
+        'placeholder': 'Телефон',
+        'class': 'form__control'
+      }
+    }
+  ]
+%}
+<form action="#" class="form form_white form_line" method="POST">
+  <div class="form__content">
+    {% for input in inputs %}
+      <div class="form__row form__row_line">
+        {{ form.input(input.name, input.value, input.type, input.attributes) }}
+        <span class="form__line"></span>
+      </div>
+    {% endfor %}
+    <div class="form__row form__row_fluid">
+      {{ form.button('submit', 'form__submit btn btn_landing btn_brand-2-gradient effect effect_bounce-top', 'ЗАРЕГИСТРИРОВАТЬСЯ БЕСПЛАТНО') }}
+    </div>
+  </div>
+</form>

@@ -1,9 +1,11 @@
+$banner-md-offset: 40px
+
 .greeting
 	+py(35px)
 	+bgc($color-brand-1)
 
 	+min(md)
-		+py(90px, 80px)
+		+py(120px, 80px)
 
 	&__container
 		+r()
@@ -15,8 +17,13 @@
 			z-index: -1
 			+min(sm)
 				left: -45%
-				top: -45%
+				top: -100px
 				+size(1200px, 500px)
+
+	&__row
+		+min(sm)
+			+jc(space-between)
+			+ai(center)
 
 	&__title
 		+lh(1.1)
@@ -35,6 +42,7 @@
 		+r()
 		+lh(1.1)
 		+ff('bold')
+		+mb(30px)
 		&:before
 			+pseudo("", 50%, null, null, 0)
 			+size(7.5px, 80px)
@@ -45,3 +53,63 @@
 		+min(md)
 			+fs(30px)
 			+pl(45px)
+			+mb(75px)
+
+	&__form
+		+mb(30px)
+
+	&__info
+		+c($color-white)
+		+fs(13px)
+
+	&__banner
+		+d(flex)
+		+r()
+		+ai(flex-end)
+		+bgi('../img/bg-greeting.jpg')
+		+c($color-white)
+		box-shadow: -50.883px 31.795px 40px 0px rgba(0, 0, 0, 0.27)
+		z-index: 1
+
+		&:before
+			+pseudo('', 0, 0)
+			z-index: -1
+			+bgi('../img/greeting-speakers.png')
+			+size(300px, 200px)
+			+min(md)
+				+size(100%, 600px)
+				+t(-45px)
+
+		+min(md)
+			+h(650px)
+			+pb(50px)
+
+		&-info
+			padding: 30px
+
+			+min(md)
+				+px($banner-md-offset)
+
+		&-title
+			+lh(1.1)
+			+ff('black')
+			+mb(15px)
+			+fs(18px)
+			+min(md)
+				+fs(23px)
+
+		&-subtitle
+			+fs(14px)
+			a
+				+c($color-brand-2)
+				+tr()
+
+		&-date
+			+d(inline-block)
+			+bgc($color-brand-1)
+			+ff('b')
+			+fs(20px)
+			padding: 10px 15px 10px 30px
+			+min(md)
+				+pl($banner-md-offset)
+				+fs(24px)

@@ -17,22 +17,46 @@ $themeFormDesign: "new"
 		+min(sm)
 			&__content
 				+d('flex')
+				flex-wrap: wrap
 				justify-content: center
-				+mx( -getComp(gutter) )
+				+mx( -15px )
 
 			&__row
 				flex: 1
 				+px( getComp(gutter) )
 				+offset('r', 15px)
 
-			&__submit
-				+size(100%)
+		&__row
+			&_fluid
+				text-align: center
+				+mt(30px)
+				flex-basis: 100%
+
+	&_white &
+		&__control
+			+c($color-white)
+			text-transform: uppercase
+			+ff('b')
+			+placeholder
+				+c($color-white)
+
+		&__line
+			+bgc($color-brand-1)
+
+		&__row_line
+			&:before
+				+bgc($color-white)
+
+	&__submit
+		+mx(auto)
+		max-width: 80%
 
 	@if $themeFormDesign == "new"
 		&__control
 			+input-default()
 			padding: 15px
 			border: none
+			background-color: transparent
 
 			&:focus
 				+placeholder()
@@ -40,9 +64,8 @@ $themeFormDesign: "new"
 
 		&__line
 			+a(null, null, 0, 0)
-			+size(0, 1px)
+			+size(0, 10px)
 			+tr()
-			+bgc($color-brand-1)
 
 		input:focus + &__line
 			width: 100%
@@ -51,8 +74,7 @@ $themeFormDesign: "new"
 			&:before
 				content: ""
 				+a(null, null, 0, 0)
-				+size(100%, 1px)
-				+bgc(transparentize($color-black, 0.8))
+				+size(100%, 10px)
 
 	@else
 		&__control

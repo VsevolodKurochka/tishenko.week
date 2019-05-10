@@ -1,14 +1,28 @@
 {% import 'macros/macros.landing.twig' as landing %}
 <section class="greeting" id="section-greeting">
   <div class="container greeting__container">
-    <div class="row">
+    <div class="row greeting__row">
       <div class="col-12 col-md-6">
         <h1 class="greeting__title">
           <span class="greeting__title-highlight">КАК ЗА НЕДЕЛЮ</span><br>СОЗДАТЬ<br>ОНЛАЙН-ШКОЛУ
         </h1>
         <h2 class="greeting__subtitle">и выстроить систему<br>продаж через автовебинара*</h2>
+        <div class="greeting__form">
+          {% include 'components/form.twig' %}
+        </div>
+        <p class="greeting__info">* 85 % участников, выполнивших все задания, выходят на уровень дохода не менее $5 000</p>
       </div>
-      <div class="col-12 col-md-6"></div>
+      <div class="col-12 col-md-6 col-lg-5">
+        <div class="greeting__banner">
+          <div class="greeting__banner-body">
+            <div class="greeting__banner-info">
+              <p class="greeting__banner-title">Бесплатный двухдневный онлайн-интенсив от основателей LiftMarketing Group</p>
+              <p class="greeting__banner-subtitle">Регистрируйтесь на бесплатное участие в онлайн-интенсиве и, пройдя всего 2 вебинара, получите пошаговое руководство по созданию прибыльной онлайн-школы и выводу существующей на высокий уровень дохода.</p>
+            </div>
+            <p class="greeting__banner-date">25 и 29 апреля</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
