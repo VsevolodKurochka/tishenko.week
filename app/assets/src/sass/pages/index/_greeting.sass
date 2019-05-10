@@ -1,10 +1,12 @@
 $banner-md-offset: 40px
+$banner-default-offset: 25px
 
 .greeting
 	+py(35px)
 	+bgc($color-brand-1)
 	background-image: linear-gradient(0deg, darken($color-brand-1, 10%), $color-brand-1);
-
+	+max(sm)
+		overflow: hidden
 	+min(md)
 		+py(120px, 80px)
 
@@ -16,22 +18,42 @@ $banner-md-offset: 40px
 			+bgc(#fff)
 			transform: skew(-15deg)
 			z-index: -1
+
+			+max(sm)
+				left: -45%
+				top: -80px
+				+size(calc(130% + 65px), 255px)
+			+min(xs)
+				+max(sm)
+					+h(315px)
 			+min(sm)
 				left: -45%
 				top: -120px
+				+size(800px, 500px)
+
+			+min(md)
+				+size(1000px, 400px)
+
+			+min(lg)
 				+size(1200px, 500px)
 
 	&__row
 		+min(sm)
 			+jc(space-between)
-			+ai(center)
 
 	&__title
 		+lh(1.1)
 		+ff('black')
 		+mb(15px)
+		+fs(30px)
+		+min(xs)
+			+fs(45px)
+
 		+min(md)
 			+mb(30px)
+			+fs(45px)
+
+		+min(lg)
 			+fs(64px)
 
 		&-highlight
@@ -44,49 +66,75 @@ $banner-md-offset: 40px
 		+lh(1.1)
 		+ff('bold')
 		+mb(30px)
+		+fs(17px)
+		+pl(25px)
+
 		&:before
 			+pseudo("", 50%, null, null, 0)
-			+size(7.5px, 80px)
+			+size(4px, 50px)
 			+bgc($color-brand-1)
-			transform: skew(-15deg)
+			transform: translateY(-50%) skew(-15deg)
 			+min(md)
-				transform: translateY(-50%) skew(-15deg)
+				+size(7.5px, 80px)
+
+		+min(xs)
+			+pl(30px)
+			+fs(24px)
+
 		+min(md)
-			+fs(30px)
+			+fs(25px)
 			+pl(45px)
-			+mb(75px)
+			+mb(60px)
+
+		+min(lg)
+			+fs(30px)
+			+mb(100px)
 
 	&__form
 		+mb(30px)
+		+min(xs)
+			+max(sm)
+				+w(50%)
+				+mx(auto)
 
 	&__info
 		+c($color-white)
 		+fs(13px)
+		+max(sm)
+			+ta(center)
+			+mb(15px)
 
 	&__banner
 		+d(flex)
 		+r()
 		+ai(flex-end)
+		+pb($banner-default-offset)
 		+bgi('../img/bg-greeting.jpg')
 		+c($color-white)
 		box-shadow: -50.883px 31.795px 40px 0px rgba(0, 0, 0, 0.27)
 		z-index: 1
 
 		&:before
-			+pseudo('', 0, 0)
+			+pseudo('', -45px, 0)
 			z-index: -1
 			+bgi('../img/greeting-speakers.png')
-			+size(300px, 200px)
+			+size(100%, 400px)
 			+min(md)
-				+size(100%, 600px)
-				+t(-45px)
+				+h(450px)
+			+min(lg)
+				+h(600px)
+
+		+max(sm)
+			margin: 45px auto 0 auto
+			max-width: 270px
+			+h(550px)
 
 		+min(md)
 			+h(650px)
 			+pb(50px)
 
 		&-info
-			padding: 30px
+			padding: $banner-default-offset
 
 			+min(md)
 				+px($banner-md-offset)
@@ -109,8 +157,10 @@ $banner-md-offset: 40px
 			+d(inline-block)
 			+bgc($color-brand-1)
 			+ff('b')
-			+fs(20px)
-			padding: 10px 15px 10px 30px
+			+fs(15px)
+			padding: 10px 15px 10px $banner-default-offset
+			+min(xs)
+				+fs(20px)
 			+min(md)
 				+pl($banner-md-offset)
 				+fs(24px)

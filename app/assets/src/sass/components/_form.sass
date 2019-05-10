@@ -23,7 +23,6 @@ $themeFormDesign: "new"
 
 			&__row
 				flex: 1
-				+px( getComp(gutter) )
 				+offset('r', 15px)
 
 		&__row
@@ -48,13 +47,15 @@ $themeFormDesign: "new"
 				+bgc($color-white)
 
 	&__submit
-		+mx(auto)
-		max-width: 80%
+		+w(100%)
+		+min(sm)
+			+mx(auto)
+			max-width: 80%
 
 	@if $themeFormDesign == "new"
 		&__control
 			+input-default()
-			padding: 15px
+			padding: 15px 0
 			border: none
 			background-color: transparent
 
