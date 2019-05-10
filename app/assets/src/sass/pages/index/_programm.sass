@@ -1,0 +1,38 @@
+.programm
+	+bgc(#0e0e0e)
+	+c($color-white)
+	overflow: hidden
+
+	@at-root
+		%circle
+			+pseudo('', -80%)
+			+size(600px)
+			border-radius: 100%
+			filter: blur(170px)
+
+	&:before
+		@extend %circle
+		left: -15%
+		+bgc($color-brand-2)
+
+	&:after
+		@extend %circle
+		right: -15%
+		+bgc($color-brand-1)
+
+	&__header
+		+r()
+		z-index: 1
+		+min(sm)
+			+d(flex)
+
+		&-title
+			+min(lg)
+				+fs(72px)
+
+		&-subtitle
+			+min(sm)
+				align-self: flex-end
+
+			+min(md)
+				+ml(150px)

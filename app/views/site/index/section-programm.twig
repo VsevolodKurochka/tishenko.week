@@ -1,0 +1,18 @@
+{% import 'macros/macros.landing.twig' as landing %}
+<section class="section programm" id="section-programm">
+  <div class="container">
+    {{
+      landing.header(
+        'programm__header', 
+        {
+          'text': 'Содержание<br>интенсива',
+          'class': 'programm__header-title'
+        },
+        {
+          'text': 'Вы станете участником<br>двух событий',
+          'class': 'programm__header-subtitle'
+        }
+      )
+    }}
+  </div>
+</section>

@@ -1,3 +1,35 @@
 .section
-  +r()
-  +my(50px)
+	+r()
+	+py(45px)
+	+min(md)
+		+py(60px)
+
+	&__header
+		margin-bottom: 30px
+		+min(sm)
+			+mb(45px)
+		+min(md)
+			+mb(60px)
+
+	&__title
+		+mb(0)
+		+lh(1.1)
+		+ff('black')
+		+fs(28px)
+		+tt(uppercase)
+
+		+min(sm)
+			+fw(900)
+			+fs(45px)
+
+		+min(md)
+			+fs(60px)
+
+	&__subtitle
+		+ff('b')
+		+lh(1.1)
+		+fs(16px)
+		+min(sm)
+			+fs(20px)
+		+min(md)
+			+fs(24px)
