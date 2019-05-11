@@ -1,0 +1,27 @@
+.end
+	+min(md)
+		+py(100px)
+
+	&__header
+		&-title
+			&-highlight
+				+text-gradient()
+
+	&-item
+		+max(sm)
+			+offset('b', 30px)
+		&__image
+			+mb(15px)
+			+size(100px, 75px)
+			object-fit: contain
+			+min(sm)
+				+mb(30px)
+				+size(200px, 150px)
+
+		&__title
+			+fs(14px)
+			+max(sm)
+				br
+					+d(none)
+			+min(md)
+				+fs(20px)

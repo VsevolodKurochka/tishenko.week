@@ -1,0 +1,37 @@
+{% import 'macros/macros.landing.twig' as landing %}
+{%
+  set items = [
+    {
+      "content": "<strong>Разберетесь</strong>, как быстро запустить онлайн-школу"
+    },
+    {
+      "content": "<strong>Будете четко понимать</strong>, что нужно делать, чтоб вебинар «продавал»"
+    },
+    {
+      "content": "<strong>Приступите к организации</strong> системы продаж через воронку вебинара"
+    }
+  ]
+%}
+<section class="section end" id="section-end">
+  <div class="container end__container">
+    {{
+      landing.header(
+        'end__header', 
+        {
+          'text': '<span class="end__header-title-highlight">Пройдя вебинар, вы</span>',
+          'class': 'end__header-title'
+        }
+      )
+    }}
+    <div class="row end__row">
+      {% set i = 0 %}
+      {% for item in items %}
+        {% set i = i + 1 %}
+        <div class="col-12 col-xs-4 end-item">
+          {{landing.image("img/end-#{i}.png", item.content|striptags, "end-item__image")}}
+          <p class="end-item__title">{{item.content|raw}}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
