@@ -110,4 +110,43 @@ $(document).ready(function(){
 	$(window).scroll( throttle(highlightNavigation,100) );
 	
 	// Develope
+	/*$('.reviews-carousel').owlCarousel({
+    center: true,
+    items: 1,
+    loop: true,
+    margin: 10,
+    dots: false,
+    responsive:{
+      768: {
+        items: 3
+      },
+      1025: {
+      	items: 5
+      }
+    }
+	});*/
+	$('.reviews-carousel').slick({
+	  centerMode: true,
+	  centerPadding: '60px',
+	  slidesToShow: 1,
+	  arrows: true,
+	  responsive: [
+	    {
+	      breakpoint: 768,
+	      settings: {
+	        centerMode: true,
+	        centerPadding: '40px',
+	        slidesToShow: 1
+	      }
+	    },
+	    {
+	      breakpoint: 480,
+	      settings: {
+	        centerMode: false,
+	        centerPadding: '20px',
+	        slidesToShow: 1
+	      }
+	    }
+	  ]
+	});
 });	

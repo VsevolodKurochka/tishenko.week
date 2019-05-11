@@ -1,0 +1,60 @@
+{% import 'macros/macros.landing.twig' as landing %}
+{% 
+  set items = [
+    {
+      "name": "Алексей Лысков",
+      "niche": "печной бизнес",
+      "video": "45Sw8Ai3Ivo"
+    },
+    {
+      "name": "Илья Ширяев",
+      "niche": "настройка рекламы на фб",
+      "video": "3OlDQjO-MSw"
+    },
+    {
+      "name": "Римма Егорова",
+      "niche": "Таймменджмент",
+      "video": "nMtm_iBYl5M"
+    },
+    {
+      "name": "Татьяна Яценко",
+      "niche": "Курсы физики и математики",
+      "video": "3v73YiDLQts"
+    },
+    {
+      "name": "Виталий Диброва",
+      "niche": "Школа продажи товаров на Amazon",
+      "video": "Q0wDvr2nKro"
+    }
+  ]
+%}
+<section class="section reviews" id="section-reviews">
+  <div class="container">
+    {{
+      landing.header(
+        'reviews__header', 
+        {
+          'text': 'Отзывы<br>участников ',
+          'class': 'reviews__header-title'
+        },
+        {
+          'text': 'мастер-классов и длительных программ <br>обучения Liftmarketing Group',
+          'class': 'reviews__header-subtitle'
+        }
+      )
+    }}
+    <div class="reviews-carousel owl-carousel">
+      {% for item in items %}
+        <div class="reviews-item">
+          <div class="reviews-item__header">
+            <iframe class="reviews-item__iframe" src="https://www.youtube.com/embed/{{item.video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="reviews-item__body">
+            <p class="reviews-item__body-name">{{item.name}}</p>
+            <p class="reviews-item__body-niche">{{item.niche}}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

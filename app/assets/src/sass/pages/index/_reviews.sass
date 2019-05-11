@@ -1,0 +1,103 @@
+%reviews-circle
+	+pseudo('')
+	+size(250px)
+	border-radius: 100%
+	filter: blur(100px)
+	z-index: -1
+
+	+min(md)
+		filter: blur(150px)
+		+size(500px)
+
+.reviews
+	+r()
+	+bgc(#0e181b)
+	+c($color-white)
+	z-index: 1
+	overflow: hidden
+
+	+min(sm)
+		+py(120px)
+
+	&:before
+		@extend %reviews-circle
+		top: 0
+		left: -5%
+		+bgc($color-brand-2)
+		+min(md)
+			left: -25%
+
+	&:after
+		@extend %reviews-circle
+		bottom: -35%
+		right: 0
+		+bgc($color-brand-1)
+		+min(md)
+			bottom: -50%
+
+	&__header
+		+r()
+		z-index: 1
+		+min(sm)
+			+d(flex)
+
+		&-subtitle
+			+min(sm)
+				align-self: flex-end
+				+ml(50px)
+
+	&-carousel
+		+pb(45px)
+
+	&-item
+		+min(sm)
+			transform: scale(0.6)
+		+tr()
+		&__iframe
+			max-width: 100%
+			+tr()
+		&__body
+			+min(xs)
+				opacity: 0
+				visibility: hidden
+			+tr()
+			&-name
+				+ff('black')
+
+	.slick-slide
+		outline: none
+		pointer-events: none
+
+	.slick-arrow
+		+a(null, null, 0)
+		+bgi('../img/arrow-1.png')
+		+size(100px, 16px)
+		border: none
+		font-size: 0
+		outline: none
+		+min(md)
+			+size(200px, 37px)
+			bottom: 100px
+
+		&:hover
+			+bgi('../img/arrow-2.png')
+
+		&.slick-prev
+			left: 0
+			transform: scaleX(-1)
+
+		&.slick-next
+			right: 0
+
+	.slick-center &-item
+		transform: none
+		opacity: 1
+		visibility: visible
+		pointer-events: all
+
+		&__iframe
+			+size(420px, 250px)
+
+		&__body
+			opacity: 1
+			visibility: visible
