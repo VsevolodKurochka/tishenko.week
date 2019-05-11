@@ -32,11 +32,17 @@
 		&__inner
 			+r()
 			z-index: 1
+			+max(sm)
+				max-width: 250px
+				+mx(auto)
 		&__image
-			+a(50%, null, null, -35px)
+			+a(50%, null, null, -70px)
 			transform: translateY(-50%)
 			+h(160px)
 			object-fit: contain
+
+			+min(sm)
+				left: -35px
 			
 			+min(lg)
 				left: -15px
@@ -45,10 +51,13 @@
 		&__body
 			+r()
 			+bgc($color-white)
-			max-width: 220px
-			padding: 30px
+			max-width: 200px
+			padding: 15px
 			+ml(auto)
 			+fs(14px)
+			+min(sm)
+				padding: 30px
+				max-width: 220px
 			
 			&:before
 				+pseudo('', null, null, 0, 0)
@@ -59,10 +68,12 @@
 		&__number
 			+a(50%, null, null, -35px)
 			+ff('black')
-			+fs(100px)
+			+fs(75px)
 			+c($color-brand-2)
 			+lh(1)
 			transform: translateY(-50%)
+			+min(sm)
+				+fs(100px)
 
 		&__content
 			min-height: 180px
@@ -71,4 +82,6 @@
 
 	&__footer
 		+ta(center)
-		+mt(60px)
+		+mt(45px)
+		+min(sm)
+			+mt(60px)
