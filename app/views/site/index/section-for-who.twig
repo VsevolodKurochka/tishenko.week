@@ -1,0 +1,65 @@
+{% import 'macros/macros.landing.twig' as landing %}
+{% 
+  set items = [
+    {
+      "content": "Хотите запустить онлайн-школу и вам необходимо понять, <strong>с чего начать и как правильно организовать все процессы</strong> шаг за шагом."
+    },
+    {
+      "content": "Запустили онлайн-школу и <strong>зарабатываете до $1000</strong> с желанием выйти на уровень заработка в десятки и сотни тысяч долларов."
+    },
+    {
+      "content": "<strong>Боретесь за каждого клиента</strong> и не можете организовать их постоянный поток."
+    },
+    {
+      "content": "Пробовали проводить <strong>вебинары, но на них доходят единицы</strong>, а заявки не превращаются в покупки."
+    },
+    {
+      "content": "Не знаете, что делать с проектом дальше. Вам нужен <strong>беспроигрышный план развития.</strong>"
+    },
+    {
+      "content": "Умеете проводить вебинары и обучать, но <strong>не умеете продавать свой продукт</strong>. У вас нет понимания структуры продаж."
+    },
+  ]
+%}
+<section class="section for-who" id="section-for-who">
+  <div class="container for-who__container">
+    {{
+      landing.header(
+        'for-who__header', 
+        {
+          'text': 'Бизнес онлайн-школы<br><span class="for-who__header-title-gradient">не для всех</span>',
+          'class': 'for-who__header-title'
+        },
+        {
+          'text': 'Вам нужно стать участником<br>интенсива, если вы:',
+          'class': 'for-who__header-subtitle'
+        }
+      )
+    }}
+    <div class="row">
+      {% set i = 0 %}
+      {% for item in items %}
+        {% set i = i + 1 %}
+        <div class="col-12 col-sm-6 col-md-4 for-who-item">
+          <div class="for-who-item__inner">
+            {{landing.image("img/for-who-#{i}.png", item.content|striptags, "for-who-item__image")}}
+            <div class="for-who-item__body">
+              <span class="for-who-item__number">{{i}}</span>
+              <div class="for-who-item__content">
+                <p>{{item.content|raw}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="for-who__footer">
+      {{
+        landing.button(
+          'for-who__button',
+          'ЗАРЕГИСТРИРОВАТЬСЯ БЕСПЛАТНО'
+        )
+      }}
+    </div>
+  </div>
+</section>

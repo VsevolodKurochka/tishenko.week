@@ -1,0 +1,73 @@
+.for-who
+	&__header
+		+min(sm)
+			+d(flex)
+		&-title
+			+min(md)
+				+fs(45px)
+
+			+r()
+			&:after
+				+pseudo('', null, null, 10px, 0)
+				+size(50px, 2px)
+				+bgc($color-brand-1)
+				+min(md)
+					bottom: 22px
+					left: -5px
+					+size(70px, 8px)
+
+			&-gradient
+				+text-gradient()
+
+		&-subtitle
+			+min(sm)
+				align-self: flex-end
+				+ml(50px)
+
+	&-item
+		+offset('b', 30px)
+		+min(md)
+			+offset('b', 90px)
+		&__inner
+			+r()
+			z-index: 1
+		&__image
+			+a(50%, null, null, -35px)
+			transform: translateY(-50%)
+			+h(160px)
+			object-fit: contain
+			
+			+min(lg)
+				left: -15px
+				+h(270px)
+
+		&__body
+			+r()
+			+bgc($color-white)
+			max-width: 220px
+			padding: 30px
+			+ml(auto)
+			+fs(14px)
+			
+			&:before
+				+pseudo('', null, null, 0, 0)
+				+size(30%)
+				z-index: -1
+				box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35)
+
+		&__number
+			+a(50%, null, null, -35px)
+			+ff('black')
+			+fs(100px)
+			+c($color-brand-2)
+			+lh(1)
+			transform: translateY(-50%)
+
+		&__content
+			min-height: 180px
+			+d(flex)
+			+ai(center)
+
+	&__footer
+		+ta(center)
+		+mt(60px)
