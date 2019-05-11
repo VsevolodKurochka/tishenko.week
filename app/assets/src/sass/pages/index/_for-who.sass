@@ -3,13 +3,14 @@
 		+min(sm)
 			+d(flex)
 		&-title
+			+max(sm)
+				max-width: 270px
 			+min(md)
 				+fs(45px)
-
 			+r()
 			&:after
-				+pseudo('', null, null, 10px, 0)
-				+size(50px, 2px)
+				+pseudo('', null, null, 14px, -3px)
+				+size(44px, 5px)
 				+bgc($color-brand-1)
 				+min(md)
 					bottom: 22px

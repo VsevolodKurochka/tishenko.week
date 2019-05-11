@@ -26,7 +26,7 @@
 		+bgc($color-brand-1)
 		+max(sm)
 			top: auto
-			bottom: 0
+			bottom: 10%
 		+min(md)
 			right: -5%
 
@@ -53,6 +53,8 @@
 				+ml(150px)
 
 	&-item
+		+max(sm)
+			+offset('b', 60px)
 		&_1
 			+r()
 			z-index: 2
@@ -76,6 +78,8 @@
 
 		&__image
 			+a(0)
+			+max(sm)
+				z-index: 1
 			+min(sm)
 				max-width: none
 			&_1
@@ -117,13 +121,17 @@
 			+c(#100e0e)
 			+ff('black')
 			opacity: 0.3
-			+fs(30px)
+			+fs(45px)
+			+max(sm)
+				+ta(right)
+				+mb(-20px)
 			+min(md)
 				+fs(75px)
 			+min(lg)
 				+fs(90px)
 		&__info
 			+mb(15px)
+			+r()
 			+min(sm)
 				+d(flex)
 				+jc(flex-end)

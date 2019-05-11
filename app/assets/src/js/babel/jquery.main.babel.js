@@ -7,8 +7,9 @@ $(document).ready(function(){
 		return false;
 	}
 	$('.anchor').click(function(e){
+		const href = $(this).attr('data-href');
 		e.preventDefault();
-		scroll($( $(this).attr('href') ), 1500);
+		scroll($(href), 1500);
 	});
 
 	// Collapse
