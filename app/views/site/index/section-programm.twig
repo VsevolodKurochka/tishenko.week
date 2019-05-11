@@ -58,7 +58,7 @@
     }}
     <div class="row programm__row">
       {% for trener in treners %}
-        <div class="col-12 col-sm-6 col-md-5 col-lg-4 programm-item programm-item_{{trener.type}}">
+        <div class="col-12 col-sm-4 programm-item programm-item_{{trener.type}}">
           <div class="programm-item__inner">
             {{landing.image(trener.speakerImage, trener.title|striptags, "programm-item__image programm-item__image_#{trener.type}")}}
             <p class="programm-item__date">{{trener.date}}</p>

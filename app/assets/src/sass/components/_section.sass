@@ -19,17 +19,36 @@
 		+tt(uppercase)
 
 		+min(sm)
-			+fw(900)
 			+fs(45px)
 
 		+min(md)
+			+fs(50px)
+
+		+min(lg)
 			+fs(60px)
 
 	&__subtitle
+		+r()
 		+ff('b')
 		+lh(1.1)
 		+fs(16px)
+		+pl(25px)
 		+min(sm)
 			+fs(20px)
 		+min(md)
+			+fs(22px)
+			+pl(45px)
+		+min(lg)
 			+fs(24px)
+
+		&:before
+			+pseudo("", 50%, null, null, 0)
+			+size(4px, 50px)
+			+bgc($color-brand-1)
+			transform: translateY(-50%) skew(-15deg)
+			+min(md)
+				+size(7.5px, 80px)
+
+	&__title + &__subtitle
+		+max(sm)
+			+mt(15px)
