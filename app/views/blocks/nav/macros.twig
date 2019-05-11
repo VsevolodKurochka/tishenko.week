@@ -19,9 +19,9 @@
 
 {% macro menu(class) %}
   <nav class="nav__menu {{class}}" id="js-navigation-menu">
-    <li class="nav__menu-item"><a class="nav__menu-item-link" data-scroll="data-scroll" href="#section-1">Программа</a></li>
-    <li class="nav__menu-item"><a class="nav__menu-item-link" data-scroll="data-scroll" href="#section-2">Авторы</a></li>
-    <li class="nav__menu-item"><a class="nav__menu-item-link" data-scroll="data-scroll" href="#section-3">Отзывы</a></li>
+    <li class="nav__menu-item"><a class="nav__menu-item-link" data-scroll="data-scroll" href="#section-programm">Программа</a></li>
+    <li class="nav__menu-item"><a class="nav__menu-item-link" data-scroll="data-scroll" href="#section-authors">Авторы</a></li>
+    <li class="nav__menu-item"><a class="nav__menu-item-link" data-scroll="data-scroll" href="#section-reviews">Отзывы</a></li>
   </nav>
 {% endmacro %}
 
@@ -38,7 +38,7 @@
         <a href="tel: +1" class="addition-link addition-link_hidden"> +99 999 999 99</a>
       </div>
     {% elseif type == '2' %}
-      <button class="nav__addition-button">Зарегистрироваться бесплатно</button>
+      <a class="nav__addition-button anchor" href="#section-registration">Зарегистрироваться бесплатно</a>
     {% endif %}
     
   </div>

@@ -7,6 +7,7 @@
 		+d(block)
 		+r()
 		+c(inherit)
+		+tr()
 		text-decoration: none
 
 	+max(md)
@@ -24,6 +25,11 @@
 
 		a
 			+fs(16px)
-			+py(7px)
+			padding: 7px
 
-			+linkEffect3()
+			&:hover
+				+c($color-white)
+
+			&.active
+				+bgc(lighten($color-brand-1, 10%))
+				+c($color-white)

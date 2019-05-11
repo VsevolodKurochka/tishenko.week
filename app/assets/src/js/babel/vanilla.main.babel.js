@@ -207,9 +207,11 @@
 		linksScroll() {
 
 			new SmoothScroll(this.links, {
+				before: () => {
+					removeClass(this.menu, `nav__menu_active`);
+				},
 				after: () => {
 					removeClass(this.hamburger, 'active');
-					removeClass(this.menu, `nav__menu_active`);
 				}
 			});
 

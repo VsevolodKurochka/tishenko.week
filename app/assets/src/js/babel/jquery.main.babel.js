@@ -106,7 +106,7 @@ $(document).ready(function(){
 				}
 		});
 	}
-
+	throttle(highlightNavigation, 100);
 	$(window).scroll( throttle(highlightNavigation,100) );
 	
 	// Develope
