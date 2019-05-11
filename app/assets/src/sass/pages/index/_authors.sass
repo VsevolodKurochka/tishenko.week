@@ -1,0 +1,135 @@
+%authors-circle
+	+pseudo('', -10%)
+	+size(300px)
+	border-radius: 100%
+	filter: blur(100px)
+	z-index: -1
+
+	+min(md)
+		filter: blur(120px)
+		+size(400px)
+
+	+min(lg)
+		filter: blur(150px)
+		+size(550px)
+
+.authors
+	+bgc(#0e0e0e)
+	+r()
+	+c($color-white)
+	overflow: hidden
+	z-index: 1
+
+	&:before
+		@extend %authors-circle
+		left: -10%
+		+bgc($color-brand-2)
+
+	&:after
+		@extend %authors-circle
+		+bgc($color-brand-1)
+		+max(sm)
+			top: auto
+			bottom: 0
+		+min(md)
+			right: 7.5%
+
+	&-item
+		+max(sm)
+			+offset('b', 45px)
+		&_1
+			+min(md)
+				+mt(-75px)
+			+min(lg)
+				+mt(-100px)
+		&_1 &
+			@at-root
+				%color-1
+					+c($color-brand-1)
+			&__info
+				&:before
+					+bgc($color-brand-1)
+				&-title
+					@extend %color-1
+			&__list
+				li
+					&:after
+						border-left-color: $color-brand-1
+				strong
+					@extend %color-1
+
+		&_2 &
+			@at-root
+				%color-2
+					+c($color-brand-2)
+			&__info
+				&:before
+					+bgc($color-brand-2)
+				&-title
+					@extend %color-2
+			&__list
+				li
+					&:after
+						border-left-color: $color-brand-2
+				strong
+					@extend %color-2
+
+		&__content
+			+min(sm)
+				+jc(flex-end)
+
+		&__header
+			+mb(15px)
+			+ai(flex-end)
+
+			&-info
+				+min(sm)
+					+mb(75px)
+
+		&__image
+			+max(sm)
+				height: 200px
+
+		&__info
+			+r()
+			z-index: 1
+			&:before
+				+pseudo("", 50%, null, null, -20%)
+				+size(4px, 120px)
+				transform: translateY(-50%) skew(-15deg)
+				+min(md)
+					+size(7.5px, 150px)
+			&-name
+				+ff('black')
+				+lh(1.1)
+				+mb(10px)
+				+tt(uppercase)
+				+fs(20px)
+				+min(md)
+					+fs(30px)
+				+min(lg)
+					+fs(36px)
+
+			&-title
+				+fs(10px)
+				+min(xs)
+					+fs(14px)
+
+		&__list
+			+fs(14px)
+			li
+				+offset('b', 10px)
+				+pl(15px)
+
+				&:after
+					left: 0
+					top: 5px
+					$border-width: 5px
+					+size(0)
+					border-top: $border-width solid transparent
+					border-bottom: $border-width solid transparent
+					border-left-width: $border-width * 2
+					border-left-style: solid
+
+				strong
+					+ff('black')

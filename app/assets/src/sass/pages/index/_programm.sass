@@ -1,28 +1,27 @@
+%programm-circle
+	+pseudo('', -10%)
+	+size(450px)
+	border-radius: 100%
+	filter: blur(120px)
+
+	+min(md)
+		filter: blur(170px)
+		+size(600px)
+
 .programm
 	+bgc(#0e0e0e)
 	+c($color-white)
 	overflow: hidden
 
-	@at-root
-		%circle
-			+pseudo('', -10%)
-			+size(450px)
-			border-radius: 100%
-			filter: blur(120px)
-
-			+min(md)
-				filter: blur(170px)
-				+size(600px)
-
 	&:before
-		@extend %circle
+		@extend %programm-circle
 		left: -5%
 		+bgc($color-brand-2)
 		+min(md)
 			left: -25%
 
 	&:after
-		@extend %circle
+		@extend %programm-circle
 		right: -5%
 		+bgc($color-brand-1)
 		+max(sm)

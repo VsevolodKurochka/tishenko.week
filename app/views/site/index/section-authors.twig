@@ -1,0 +1,69 @@
+{% import 'macros/macros.landing.twig' as landing %}
+{%
+  set treners = [
+    {
+      "type": "2",
+      "title": "11 лет в бизнесе. Профессиональный консультант по продажам, формированию и мотивации sales-команд",
+      "speakerName": "Андрей<br>Полищук",
+      "speakerImage": "img/trener-photo-polishuk.png",
+      "list": [
+        "<strong>По его методикам с нуля было создано 7 отделов продаж</strong> в разных нишах и компаниях, которые суммарно принесли их владельцам более $3 млн продаж",
+        "За последний год Андрей провел <strong>около 80 живых и онлайн-выступлений</strong>, которые посетило более 22 000 человек",
+        "<strong>Минимум 6 раз в год обучается в США</strong> у лучших мировых специалистов в продажах и маркетинге на мастермайндах и практикумах",
+        "<strong>Автор программы конкурсного найма и адаптации персонала</strong>, по которой было отобрано более 1020 сотрудников в личные компании и компании его клиентов"
+      ]
+    },
+    {
+      "type": "1",
+      "title": "Серийный предприниматель. <br>Профессиональный маркетер. <br>В бизнесе с 2004 года.",
+      "speakerName": "Владислав<br>Ле",
+      "speakerImage": "img/trener-photo-le.png",
+      "list": [
+        "<strong>Соучредитель и управляющий партнер двух групп компаний Liftmarketing и Cryptonet</strong> (в состав входят более 15 проектов в сфере it, education и услуг для бизнеса)",
+        "<strong>С нуля создал и выстроил эффективную и рентабельную систему маркетинга</strong> в 15 собственных компаниях и более чем в 80 компаниях своих клиентов",
+        "Вывел несколько собственных компаний на <strong>семизначный долларовый оборот</strong>, благодаря грамотно выстроенной системе маркетинга и автоматизации бизнес-процессов",
+        "<strong>Продюсировал и создавал онлайн-проекты для таких экспертов</strong>, как Ицхак Пинтосевич, Аллан Пиз, Дамир Халилов, Дмитрий Карпиловский, Леонид Гроховский, Андрей Сподин, Иван Коваль-Зайцев и др.",
+        "<strong>Автор книг</strong> «От идеи до прибыли. Система продаж через интернет», «Как создать бизнес на Amazon»"
+      ]
+    }
+  ]
+%}
+<section class="section authors" id="section-authors">
+  <div class="container">
+    {{
+      landing.header(
+        'authors__header', 
+        {
+          'text': 'Авторы и ведущие<br>мастер-классов',
+          'class': 'authors__header-title'
+        }
+      )
+    }}
+    <div class="row">
+      {% for trener in treners %}
+        <div class="col-12 col-sm-6 authors-item authors-item_{{trener.type}}">
+          <div class="row authors-item__header">
+            <div class="col-6">
+              {{landing.image(trener.speakerImage, trener.title|striptags, "authors-item__image")}}
+            </div>
+            <div class="col-6 authors-item__header-info">
+              <div class="authors-item__info">
+                <p class="authors-item__info-name">{{trener.speakerName|raw}}</p>
+                <p class="authors-item__info-title">{{trener.title|raw}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="row authors-item__content">
+            <div class="col-12 col-md-9">
+              <ul class="list authors-item__list authors-item__list_{{trener.brand}}">
+                {% for li in trener.list %}
+                  <li>{{li|raw}}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
