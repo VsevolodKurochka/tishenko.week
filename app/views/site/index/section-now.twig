@@ -1,0 +1,55 @@
+{% import 'macros/macros.landing.twig' as landing %}
+{%
+  set items = [
+    {
+      "content": "Вы можете запустить бизнес <strong>без вложений.</strong>"
+    },
+    {
+      "content": "Вы сможете <strong>автоматизировать процесс продажи</strong> и получать клиентов на автопилоте"
+    },
+    {
+      "content": "<strong>Не нужно быть экспертом</strong>, чтоб запустить онлайн-школу."
+    },
+    {
+      "content": "<strong>Быстрый запуск</strong> бизнеса."
+    },
+    {
+      "content": "<strong>Высокая рентабельность</strong> бизнеса."
+    },
+    {
+      "content": "<strong>Не нужно наращивать «захламляющие активы»</strong> в виде офисов, складов, мебели и т. д."
+    },
+    {
+      "content": "Возможность управлять бизнесом <strong>удаленно онлайн</strong>."
+    }
+  ]
+%}
+<section class="section now" id="section-now">
+  <div class="container now__container">
+    {{
+      landing.header(
+        'now__header', 
+        {
+          'text': '<span>Почему стоит</span> <span class="now__header-title-highlight">Уже сейчас?</span>',
+          'class': 'now__header-title'
+        },
+        {
+          'text': 'запускать онлайн-бизнес<br>по продаже знаний',
+          'class': 'now__header-subtitle'
+        }
+      )
+    }}
+    <div class="row now__row">
+      {% set i = 0 %}
+      {% for item in items %}
+        {% set i = i + 1 %}
+        <div class="col-6 col-md-3 now-item">
+          <div class="now-item__inner">
+            {{landing.image("img/icon-now-#{i}.png", item.content|striptags, "now-item__image")}}
+            <p class="now-item__title">{{item.content|raw}}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

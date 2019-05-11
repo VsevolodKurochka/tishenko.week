@@ -1,0 +1,65 @@
+.now
+	+r()
+	z-index: 1
+	&:before
+		+pseudo("", null, 0, 0)
+		+bgi('../img/camera.png')
+		z-index: -1
+		+size(150px, 75px)
+		+min(sm)
+			+size(300px, 150px)
+		+min(lg)
+			+size(400px, 200px)
+	&__header
+		&-title
+			+min(sm)
+				+fs(60px)
+			+min(md)
+				+fs(70px)
+			+min(lg)
+				+fs(80px)
+			span
+				+min(sm)
+					+offset('b', 15px)
+					+d(block)
+			&-highlight
+				+text-gradient()
+				+min(sm)
+					+ta(right)
+
+		&-subtitle
+			+min(sm)
+				+mt(-60px)
+			+min(md)
+				+mt(-70px)
+			+min(lg)
+				+fs(30px)
+				+mt(-80px)
+
+	&-item
+		+offset('b', 30px)
+		&__inner
+			+r()
+			padding: 7.5px
+			min-height: 175px
+			+bgc($color-white)
+			+min(xs)
+				padding: 15px
+				min-height: 200px
+			&:before
+				+pseudo('', null, null, 0, 0)
+				+size(45%)
+				z-index: -1
+				box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35)
+
+		&__image
+			+size(50px)
+			object-fit: contain
+			+mb(15px)
+			+min(xs)
+				+size(80px)
+
+		&__title
+			+fs(11px)
+			+min(xs)
+				+fs(14px)
