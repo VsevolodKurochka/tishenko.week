@@ -129,7 +129,7 @@ $(document).ready(function(){
 	$('.reviews-carousel').slick({
 	  centerMode: true,
 	  centerPadding: '60px',
-	  slidesToShow: 1,
+	  slidesToShow: 3,
 	  arrows: true,
 	  responsive: [
 	    {
