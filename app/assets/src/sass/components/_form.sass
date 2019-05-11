@@ -64,8 +64,10 @@ $themeFormDesign: "new"
 
 		&__line
 			+a(null, null, 0, 0)
-			+size(0, 10px)
+			+size(0, 5px)
 			+tr()
+			+min(sm)
+				+h(10px)
 
 		input:focus + &__line
 			width: 100%
@@ -74,7 +76,9 @@ $themeFormDesign: "new"
 			&:before
 				content: ""
 				+a(null, null, 0, 0)
-				+size(100%, 10px)
+				+size(100%, 5px)
+				+min(sm)
+					+h(10px)
 
 	@else
 		&__control
