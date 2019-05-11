@@ -5,7 +5,7 @@
 
 	@at-root
 		%circle
-			+pseudo('', -80%)
+			+pseudo('', -10%)
 			+size(600px)
 			border-radius: 100%
 			filter: blur(170px)
@@ -14,11 +14,19 @@
 		@extend %circle
 		left: -15%
 		+bgc($color-brand-2)
+		+min(md)
+			left: -25%
 
 	&:after
 		@extend %circle
 		right: -15%
 		+bgc($color-brand-1)
+		+min(md)
+			right: -5%
+
+	&__row
+		+min(sm)
+			+jc(space-between)
 
 	&__header
 		+r()
@@ -36,3 +44,137 @@
 
 			+min(md)
 				+ml(150px)
+
+	&-item
+		&_1
+			+r()
+			z-index: 2
+		@at-root
+			%info-text-large
+				+lh(1.1)
+				+min(md)
+					+fs(20px)
+				+min(lg)
+					+fs(22px)
+			%info-text-default
+				+lh(1.1)
+				+ff('b')
+				+max(sm)
+					+fs(14px)
+		&__inner
+			+r()
+			z-index: 1
+
+		&__image
+			+a(0)
+			+min(sm)
+				max-width: none
+			&_1
+				+min(md)
+					+w(740px)
+					top: -5%
+					left: 17%
+
+			&_2
+				z-index: -1
+				+min(md)
+					+w(450px)
+					top: 5%
+					right: 67%
+
+		&__date
+			+c(#100e0e)
+			+ff('black')
+			opacity: 0.3
+			+fs(30px)
+			+min(md)
+				+fs(75px)
+			+min(lg)
+				+fs(90px)
+		&__info
+			+d(flex)
+			+jc(flex-end)
+			+mb(15px)
+			+min(sm)
+				+mb(30px)
+			+min(lg)
+				+mb(45px)
+
+			&-cube
+				border: 5px solid $color-white
+				+min(md)
+					padding: 20px 20px 40px 20px
+					border-width: 10px
+					width: 85%
+
+			&-date
+				$date-offset: 15px
+
+				@extend %info-text-large
+				+d(inline-block)
+				+ff('b')
+				padding: $date-offset/3 $date-offset
+				+mb($date-offset)
+				+ml(-#{$date-offset})
+
+				+min(lg)
+					+px($date-offset * 2)
+					+mb($date-offset * 2)
+					+ml(-#{$date-offset * 2})
+
+				&_1
+					+bgc($color-brand-1)
+
+				&_2
+					+bgc($color-brand-2)
+
+			&-title
+				@extend %info-text-large
+				+ff('black')
+				+mb(10px)
+
+			&-subtitle
+				@extend %info-text-default
+				&_1
+					+c($color-brand-1)
+
+				&_2
+					+c($color-brand-2)
+
+			&-name
+				@extend %info-text-default
+				+tt(uppercase)
+
+		&__content
+			&-title
+				@extend %info-text-large
+				+tt(uppercase)
+				+ff('black')
+				+mb(15px)
+
+				&_1
+					+c($color-brand-1)
+
+				&_2
+					+c($color-brand-2)
+
+		&__list
+			+fs(14px)
+			li
+				+offset('b', 10px)
+				+pl(20px)
+				&:before
+					+pseudo('', 5px, null, null, 0)
+					+size(10px)
+					border-radius: 100%
+				&:after
+					+pseudo("\2713", 0, null, null, 3px)
+					+ff('black')
+					+fs(20px)
+					+lh(1)
+			&_1 li
+				&:before
+					+bgc($color-brand-1)
+			&_2 li
+				&:before
+					+bgc($color-brand-2)

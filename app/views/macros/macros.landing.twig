@@ -1,5 +1,5 @@
-{% macro image(src, alt) %}
-  <img src="{{path}}/{{src}}" alt="{{alt}}">
+{% macro image(src, alt, class) %}
+  <img src="{{path}}/{{src}}" alt="{{alt}}" class="{{class}}">
 {% endmacro %}
 {% macro button(type, class, text, attributes) %}
   {% import "macros/macros.form.twig" as form %}

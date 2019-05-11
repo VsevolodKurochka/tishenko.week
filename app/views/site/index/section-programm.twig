@@ -1,6 +1,48 @@
 {% import 'macros/macros.landing.twig' as landing %}
+{%
+  set treners = [
+    {
+      "type": "1",
+      "brand": 2,
+      "date": "25.04.19",
+      "dateSmall": "25 апреля",
+      "title": "Как создать системную онлайн-школу на своих или чужих знаниях",
+      "speakerName": "Андрей Полищук",
+      "speakerImage": "img/speaker-polishuk.png",
+      "list": [
+        "Три сферы образовательного онлайн-проекта",
+        "Ступени развития проекта и ключевые события на каждой из них",
+        "Разница понятий «рынок», «ниша», «меганиша»",
+        "10 способов упаковки ниши",
+        "Скрипт назначения консультации",
+        "Кейсы реализации инструментов маркетинга и продаж в разных проектах онлайн-школ",
+        "Структура продающей консультации",
+        "Чек-лист продающего выступления",
+        "Долгосрочные инструменты доминирования на рынке"
+      ]
+    },
+    {
+      "type": "2",
+      "brand": 1,
+      "date": "29.04.19",
+      "dateSmall": "29 апреля",
+      "title": "Конвейер продаж с помощью воронки вебинара",
+      "speakerName": "Влад Ле",
+      "speakerImage": "img/speaker-le.png",
+      "list": [
+        "Какие основные проблемы на вебинарах?",
+        "Как провести свой первый вебинар без ошибок?",
+        "Как организовать вебинар?",
+        "Как продавать с вебинара?",
+        "Какие ключевые моменты нужно проработать в вебинаре?",
+        "Как составить продающий сценарий вебинара?",
+        "Как не проводить вебинары, запустить их на автопилоте и получать постоянный поток заявок?",
+      ]
+    }
+  ]
+%}
 <section class="section programm" id="section-programm">
-  <div class="container">
+  <div class="container programm__container">
     {{
       landing.header(
         'programm__header', 
@@ -14,5 +56,31 @@
         }
       )
     }}
+    <div class="row programm__row">
+      {% for trener in treners %}
+        <div class="col-12 col-sm-6 col-md-5 col-lg-4 programm-item programm-item_{{trener.type}}">
+          <div class="programm-item__inner">
+            {{landing.image(trener.speakerImage, trener.title|striptags, "programm-item__image programm-item__image_#{trener.type}")}}
+            <p class="programm-item__date">{{trener.date}}</p>
+            <div class="programm-item__info">
+              <div class="programm-item__info-cube">
+                <p class="programm-item__info-date programm-item__info-date_{{trener.brand}}">{{trener.dateSmall}}</p>
+                <p class="programm-item__info-title">{{trener.title}}</p>
+                <p class="programm-item__info-subtitle programm-item__info-subtitle_{{trener.brand}}">Спикер:</p>
+                <p class="programm-item__info-name">{{trener.speakerName}}</p>
+              </div>
+            </div>
+            <div class="programm-item__content">
+              <p class="programm-item__content-title programm-item__content-title_{{trener.brand}}">Вы узнаете:</p>
+              <ul class="list programm-item__list programm-item__list_{{trener.brand}}">
+                {% for li in trener.list %}
+                  <li>{{li|raw}}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </section>
