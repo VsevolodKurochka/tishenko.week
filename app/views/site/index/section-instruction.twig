@@ -1,0 +1,36 @@
+{% import 'macros/macros.landing.twig' as landing %}
+{% set title = "Чтоб запустить бизнес в <br>онлайн-образовании, вам <strong>не нужны <br>вложения и специальное образование.</strong>" %}
+<section class="section instruction" id="section-instruction">
+  {% for i in 1..4 %}
+    {{landing.image("img/molecule-#{i}.png", title|striptags, "instruction__molecule instruction__molecule_#{i}")}}
+  {% endfor %}
+  <div class="container">
+    <div class="row instruction__content">
+      <div class="col-12 col-md-10">
+        <div class="row">
+          <div class="col-12 col-xs-6 instruction__content-image-holder">
+            {{landing.image('img/instruction.jpg', title|striptags, "instruction__content-image")}}
+          </div>
+          <div class="col-12 col-xs-6">
+            <div class="instruction__content-body">
+              <div class="instruction__content-body-text">
+                {{title|raw}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row instruction__footer">
+      <div class="col-12 col-lg-8 instruction__footer-content">
+        <p class="instruction__footer-title"><strong class="color-brand-2">Необходимы лишь</strong> пошаговые <br>инструкции и дисциплина их <br>реализации.</p>
+        {{
+          landing.button(
+            'instruction__button',
+            'ЗАРЕГИСТРИРОВАТЬСЯ БЕСПЛАТНО'
+          )
+        }}
+      </div>
+    </div>
+  </div>
+</section>

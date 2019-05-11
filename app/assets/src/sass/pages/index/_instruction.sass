@@ -1,0 +1,100 @@
+.instruction
+	+r()
+	+bgc($color-brand-1)
+	+c($color-white)
+	z-index: 2
+	+min(md)
+		+py(120px, 100px)
+
+	&__molecule
+		+a()
+		max-width: 30%
+		&_1
+			top: -5%
+			left: -5%
+			+min(lg)
+				max-width: 300px
+
+		&_2
+			top: 25%
+			left: 0
+			+max(sm)
+				+d(none)
+			+min(lg)
+				max-width: 350px
+
+		&_3
+			top: -5%
+			+max(sm)
+				right: 0
+			+min(sm)
+				top: 30%
+				left: 75%
+				z-index: 1
+				max-width: 20%
+			+min(lg)
+				top: 20%
+				left: 65%
+				max-width: 400px
+
+		&_4
+			bottom: -5%
+			right: 0
+			+min(lg)
+				max-width: 300px
+
+	&__content
+		+mb(45px)
+		+min(sm)
+			+mb(60px)
+			+jc(center)
+
+		&-image,
+		&-body
+			+min(xs)
+				min-height: 270px
+
+		&-image
+			+r()
+			z-index: 1
+			object-fit: cover
+			+min(xs)
+				top: -10%
+				left: 15%
+
+			&-holder
+				+fs(0)
+
+		&-body
+			+d(flex)
+			+ai(center)
+			+jc(center)
+			border: 5px solid $color-white
+			padding: 15px
+			+max(sm)
+				+fs(14px)
+				br
+					+d(none)
+
+			+min(xs)
+				+px(15%)
+			+min(md)
+				+lh(1.7)
+				border-width: 10px
+
+			strong
+				+ff('black')
+
+	&__footer
+		+jc(center)
+
+		&-title
+			+fs(14px)
+			text-shadow: -6.784px 4.239px 5px rgba(0, 0, 0, 0.17)
+			+tt(uppercase)
+			+ff('black')
+			+mb(30px)
+			+min(xs)
+				+fs(16px)
+			+min(md)
+				+fs(28px)
