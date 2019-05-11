@@ -1,0 +1,151 @@
+.registration
+	background-image: linear-gradient(90deg, darken($color-brand-1, 20%), $color-brand-1)
+	+c($color-white)
+
+	+min(sm)
+		+py(120px)
+
+	&__money
+		+a()
+		max-width: 20%
+
+		&_1
+			top: -5%
+			left: 30%
+			max-width: 200px
+			+max(sm)
+				top: -3%
+				left: 50%
+				max-width: 110px
+
+		&_2
+			top: 40%
+			left: 2%
+			filter: blur(2px)
+			+size(150px)
+			object-fit: contain
+			transform: rotate(90deg)
+			+max(sm)
+				+d(none)
+			+min(md)
+				top: 25%
+
+		&_3
+			bottom: 5%
+			left: 4%
+			+size(120px)
+			filter: blur(1px)
+			+max(sm)
+				+d(none)
+
+	&__molecule
+		+a()
+		max-width: 20%
+		&_1
+			left: 0
+			top: -5%
+			max-width: 130px
+			+max(sm)
+				top: -3%
+				max-width: 80px
+			+min(md)
+				max-width: 200px
+
+		&_4
+			top: 15%
+			right: 0
+			+min(sm)
+				max-width: 250px
+
+	&__header
+		&-title
+			+mb(15px)
+			+min(sm)
+				+max(md)
+					+fs(40px)
+
+		&-subtitle
+			+min(md)
+				+fs(28px)
+
+	&__info
+		+mb(15px)
+		padding: 15px
+		background-image: linear-gradient(90deg, #cc0c29, transparent)
+
+	&__row
+		+min(sm)
+			+jc(space-between)
+
+	&__container
+		+r()
+		z-index: 1
+		&:before
+			+pseudo("", null, 0, 0)
+			+bgc(#fff)
+			clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%)
+			z-index: -1
+
+			+max(sm)
+				+size(100%, 430px)
+				bottom: -45px
+
+			+min(sm)
+				left: 40%
+				bottom: calc(-22% - 1px)
+				+size(1200px, 670px)
+
+			+min(md)
+				left: 40%
+				bottom: -20%
+				+size(1200px, 500px)
+
+	&__banner
+		&-header
+			+r()
+		&-info
+			+ta(right)
+			+mt(-20px)
+			+mb(35px)
+
+			+min(md)
+				+mt(-70px)
+				+mb(45px)
+
+			&-title
+				+d(inline-block)
+				+w(200px)
+				+ta(center)
+				+bgc($color-brand-1)
+				+c($color-white)
+				+tt(uppercase)
+				+fs(20px)
+				+min(md)
+					+fs(22px)
+
+		&-body
+			+c($color-black)
+			+jc(flex-end)
+			+max(sm)
+				+fs(12px)
+			+min(sm)
+				+max(md)
+					+fs(14px)
+			&-inner
+				+r()
+				+pl(60px)
+				+min(md)
+					+pl(110px)
+				&:before
+					+pseudo("", 0, null, null, 0)
+					+size(48px, 51px)
+					+bgi('../img/pdf-icon.png')
+					object-fit: contain
+
+					+min(md)
+						+size(90px, 96px)
+
+			br
+				+d(none)
+				+min(lg)
+					+d(block)

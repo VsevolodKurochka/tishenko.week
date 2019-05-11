@@ -1,0 +1,49 @@
+{% import 'macros/macros.landing.twig' as landing %}
+{% set title = "Создайте<br> прибыльную <br>онлайн-школу" %}
+<section class="section registration" id="section-registration">
+  {% for i in 1..3 %}
+    {{landing.image("img/money.png", title|striptags, "registration__money registration__money_#{i}")}}
+  {% endfor %}
+  {{landing.image("img/molecule-2.png", title|striptags, "registration__molecule registration__molecule_1")}}
+  {{landing.image("img/molecule-4.png", title|striptags, "registration__molecule registration__molecule_4")}}
+  <div class="container registration__container">
+    <div class="row registration__row">
+      <div class="col-12 col-sm-6">
+        {{
+          landing.header(
+            'registration__header', 
+            {
+              'text': title,
+              'class': 'registration__header-title'
+            },
+            {
+              'text': 'и «заставьте» свои вебинары<br> продавать!',
+              'class': 'registration__header-subtitle'
+            }
+          )
+        }}
+        <div class="registration__info">
+          <p>Регистрируйтесь на онлайн-интенсив «<strong>Как за неделю создать онлайн-школу и выстроить систему продаж через воронку вебинара</strong>» и постройте свой удаленный перспективный бизнес в онлайн-образовании.</p>
+        </div>
+        <div class="registration__form">
+          {% include 'components/form.twig' %}
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="registration__banner">
+          <div class="registration__banner-header">
+            {{landing.image("img/registration-book.png", title|striptags, "registration__banner-image")}}
+          </div>
+          <div class="registration__banner-info">
+            <span class="registration__banner-info-title">БОНУС!</span>
+          </div>
+          <div class="row registration__banner-body">
+            <div class="col-10 registration__banner-body-inner">
+              <p>Сразу после <strong>регистрации</strong> вы получите<br> <strong>PDF «Непобедимый интернет- проект. <br>7 простых шагов</strong>», который придет <br>письмом на email.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
