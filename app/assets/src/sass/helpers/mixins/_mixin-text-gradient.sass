@@ -1,4 +1,7 @@
 =text-gradient()
-	background: linear-gradient(45deg, #8d091d, #f70f31)
-	-webkit-background-clip: text
-	-webkit-text-fill-color: transparent
+	+max(sm)
+		+c($color-brand-1)
+	+min(sm)
+		background: linear-gradient(45deg, darken($color-brand-1, 10%), $color-brand-1)
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
