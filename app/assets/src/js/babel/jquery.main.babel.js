@@ -109,23 +109,7 @@ $(document).ready(function(){
 	}
 	throttle(highlightNavigation, 100);
 	$(window).scroll( throttle(highlightNavigation,100) );
-	
-	// Develope
-	/*$('.reviews-carousel').owlCarousel({
-    center: true,
-    items: 1,
-    loop: true,
-    margin: 10,
-    dots: false,
-    responsive:{
-      768: {
-        items: 3
-      },
-      1025: {
-      	items: 5
-      }
-    }
-	});*/
+
 	$('.reviews-carousel').slick({
 	  centerMode: true,
 	  centerPadding: '60px',
@@ -150,4 +134,36 @@ $(document).ready(function(){
 	    }
 	  ]
 	});
+
+	// Set date
+	function getMonthName(month) {
+		const monthList = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];
+		return monthList[month];
+	}
+	function setDateToBlocks() {
+		const today = new Date();
+		const hours = today.getHours();
+		const day = today.getDate();
+		const month = today.getMonth();
+		const nextCourse = 3;
+
+		let dayOneText;
+		let dayTwoText;
+		let monthText;
+
+		if ( hours >= 19 && hours <= 24 ) {
+			dayOneText = day + 1;
+		} else {
+			dayOneText = day;
+		}
+
+		dayTwoText = dayOneText + nextCourse;
+		monthText = getMonthName(month);
+
+		$('.js-day-one').html(dayOneText);
+		$('.js-day-two').html(dayTwoText);
+		$('.js-month').html(monthText);
+	}
+
+	setDateToBlocks();
 });	
