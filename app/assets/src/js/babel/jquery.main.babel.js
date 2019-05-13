@@ -178,6 +178,9 @@ $(document).ready(function(){
 			const phone = $(this).closest('form').find('.js-form-phone-wrapper');
 			if (this.checked) {
 	      phone.removeClass('form__row_hidden');
+	      setTimeout(function(){
+	      	phone.find('input').focus();
+	      }, 200);
 	    } else {
 	    	phone.addClass('form__row_hidden');
 	    }

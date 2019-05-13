@@ -112,7 +112,7 @@ $banner-default-offset: 25px
 		box-shadow: -50.883px 31.795px 40px 0px rgba(0, 0, 0, 0.27)
 		z-index: 1
 
-		&:before
+		/*&:before
 			+pseudo('', -45px, 0)
 			z-index: -1
 			+bgi('../img/greeting-speakers.png')
@@ -120,16 +120,36 @@ $banner-default-offset: 25px
 			+min(md)
 				+h(450px)
 			+min(lg)
-				+h(600px)
+				+h(600px)*/
 
 		+max(sm)
 			margin: 45px auto 0 auto
 			max-width: 270px
-			+h(550px)
+			min-height: 400px
 
 		+min(md)
-			+h(650px)
+			min-height: 500px
 			+pb(50px)
+
+		&-bonus
+			+mb(30px)
+			+fs(12px)
+			+r()
+			+pl(45px)
+			+max(sm)
+				br
+					+d(none)
+			+min(md)
+				+fs(14px)
+				+pl(60px)
+				+mb(60px)
+			&:before
+				+pseudo("", 0, null, null, 0)
+				+size(30px, 32px)
+				+bgi('../img/pdf-icon.png')
+				object-fit: contain
+				+min(md)
+					+size(48px, 51px)
 
 		&-info
 			padding: $banner-default-offset
