@@ -26,7 +26,7 @@
 		+bgc($color-brand-1)
 		+max(sm)
 			top: auto
-			bottom: 10%
+			bottom: 0
 		+min(md)
 			right: -5%
 
@@ -53,8 +53,6 @@
 				+ml(150px)
 
 	&-item
-		+max(sm)
-			+offset('b', 60px)
 		&_1
 			+r()
 			z-index: 2
@@ -79,13 +77,16 @@
 		&__image
 			+a(0)
 			+max(sm)
-				z-index: 1
+				z-index: 2
 			+min(sm)
 				z-index: 2
 				max-width: none
 			&_1
 				+max(sm)
-					left: 30%
+					top: 13%
+					left: 9%
+					max-width: none
+					width: 400px
 				+min(sm)
 					+w(450px)
 					top: -6%
@@ -104,7 +105,9 @@
 				z-index: -1
 				+max(sm)
 					left: -160px
-					max-width: 300px
+					max-width: 350px
+					z-index: 2
+					top: 25%
 				+min(sm)
 					+w(265px)
 					top: 2%
@@ -123,11 +126,10 @@
 			+c(#100e0e)
 			+ff('black')
 			opacity: 0.3
-			+fs(45px)
+			+fs(60px)
 			+tt(uppercase)
 			+max(sm)
-				+ta(right)
-				+mb(-20px)
+				+mb(-14px)
 			+min(md)
 				+fs(75px)
 			+min(lg)
@@ -193,17 +195,19 @@
 				@extend %info-text-default
 				+tt(uppercase)
 
-		&_2 &__info
-			+max(sm)
-				+d(flex)
-				+jc(flex-end)
+		&_2 &
+			&__info
+				+max(sm)
+					+mb(300px)
+
 				&-cube
-					+ta(right)
-					+w(165px)
-				&-title
-					+ml(auto)
+					+max(sm)
+						+pb(75px)
 
 		&__content
+			+max(sm)
+				+r()
+				z-index: 2
 			&-title
 				@extend %info-text-large
 				+tt(uppercase)
@@ -221,6 +225,7 @@
 			li
 				+offset('b', 10px)
 				+pl(20px)
+
 				&:before
 					+pseudo('', 5px, null, null, 0)
 					+size(10px)
@@ -233,6 +238,9 @@
 			&_1 li
 				&:before
 					+bgc($color-brand-1)
+					box-shadow: 0px 2px 6px 0px rgba(246, 15, 49, 0.5)
+
 			&_2 li
 				&:before
 					+bgc($color-brand-2)
+					box-shadow: 0px 2px 6px 0px rgba(1, 152, 232, 0.51)
