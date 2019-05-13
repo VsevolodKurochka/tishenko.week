@@ -4,8 +4,8 @@
     {
       "type": "1",
       "brand": 2,
-      "date": "25.04.19",
-      "dateSmall": "25 апреля",
+      "date": "День 1",
+      "dateSmall": "js-day-one",
       "title": "Как создать системную онлайн-школу на своих или чужих знаниях",
       "speakerName": "Андрей Полищук",
       "speakerImage": "img/speaker-polishuk.png",
@@ -24,9 +24,9 @@
     {
       "type": "2",
       "brand": 1,
-      "date": "29.04.19",
-      "dateSmall": "29 апреля",
-      "title": "Конвейер продаж с помощью воронки вебинара",
+      "date": "День 2",
+      "dateSmall": "js-day-two",
+      "title": "Как продавать<br>с помощью<br> автовебинара",
       "speakerName": "Влад Ле",
       "speakerImage": "img/speaker-le.png",
       "list": [
@@ -47,7 +47,7 @@
       landing.header(
         'programm__header', 
         {
-          'text': 'Содержание<br>интенсива',
+          'text': 'Что будет<br> на интенсиве',
           'class': 'programm__header-title'
         },
         {
@@ -64,8 +64,8 @@
             <p class="programm-item__date">{{trener.date}}</p>
             <div class="programm-item__info">
               <div class="programm-item__info-cube">
-                <p class="programm-item__info-date programm-item__info-date_{{trener.brand}}">{{trener.dateSmall}}</p>
-                <p class="programm-item__info-title">{{trener.title}}</p>
+                <p class="programm-item__info-date programm-item__info-date_{{trener.brand}}"><span class="{{trener.dateSmall}}"></span> <span class="js-month"></span></p>
+                <p class="programm-item__info-title">{{trener.title|raw}}</p>
                 <p class="programm-item__info-subtitle programm-item__info-subtitle_{{trener.brand}}">Спикер:</p>
                 <p class="programm-item__info-name">{{trener.speakerName}}</p>
               </div>
