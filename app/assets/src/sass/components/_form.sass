@@ -1,4 +1,4 @@
-$themeFormDesign: "new"
+$themeFormDesign: "old"
 
 .form
 	width: 100%
@@ -87,10 +87,12 @@ $themeFormDesign: "new"
 	@else
 		&__control
 			+input-default()
-			border: 1px solid #ddd
+			+bgc(transparent)
+			padding: 15px
+			border: 1px solid #fff
 
 			&:focus
-				border-color: $color-brand-1
+				border-color: $color-brand-2
 
 				+placeholder()
 					color: transparent

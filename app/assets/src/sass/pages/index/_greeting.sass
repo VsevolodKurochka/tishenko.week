@@ -63,7 +63,7 @@ $banner-default-offset: 25px
 		+r()
 		+lh(1.1)
 		+ff('bold')
-		+mb(30px)
+		+mb(45px)
 		+fs(17px)
 		+pl(25px)
 
@@ -99,8 +99,24 @@ $banner-default-offset: 25px
 		+c($color-white)
 		+fs(13px)
 		+max(sm)
-			+ta(center)
 			+mb(15px)
+
+	&__bonus
+		+r()
+		+c($color-white)
+		+mb(30px)
+		+fs(12px)
+		+pl(45px)
+		+min(sm)
+			+d(none)
+
+		&:before
+			+pseudo("", 0, null, null, 0)
+			+size(30px, 32px)
+			+bgi('../img/pdf-icon-white.png')
+			object-fit: contain
+			+min(md)
+				+size(48px, 51px)
 
 	&__banner
 		+d(flex)
@@ -137,8 +153,7 @@ $banner-default-offset: 25px
 			+r()
 			+pl(45px)
 			+max(sm)
-				br
-					+d(none)
+				+d(none)
 			+min(md)
 				+fs(14px)
 				+pl(60px)
