@@ -5,6 +5,13 @@ $themeFormDesign: "new"
 
 	&__row
 		+r()
+		+tr()
+		&_hidden
+			opacity: 0
+			visibility: hidden
+
+		&-inner
+			+d(inline-block)
 
 	&_block &__row
 		+offset('b', 15px)
@@ -26,7 +33,6 @@ $themeFormDesign: "new"
 
 		&__row
 			&_fluid
-				text-align: center
 				+mt(30px)
 				flex-basis: 100%
 

@@ -166,4 +166,23 @@ $(document).ready(function(){
 	}
 
 	setDateToBlocks();
+
+	$('.registration__form .control').attr('for', 'option2');
+	$('.registration__form input[type="checkbox"]')
+		.attr('id', 'option2')
+		.attr('name', 'option2');
+
+	$('.js-toggle-phone-wrapper input[type="checkbox"]').each(function(){
+		$(this).change(function(){
+			const that = $(this);
+			const phone = $(this).closest('form').find('.js-form-phone-wrapper');
+			if (this.checked) {
+	      phone.removeClass('form__row_hidden');
+	    } else {
+	    	phone.addClass('form__row_hidden');
+	    }
+		});
+	});
+
+	$('input[name="__gc__internal__form__helper"]').val(window.location.href);
 });	
