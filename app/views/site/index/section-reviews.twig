@@ -4,27 +4,32 @@
     {
       "name": "Алексей Лысков",
       "niche": "печной бизнес",
-      "video": "45Sw8Ai3Ivo"
+      "video": "45Sw8Ai3Ivo",
+      "image": "img/rev-liskov.png"
     },
     {
       "name": "Илья Ширяев",
       "niche": "настройка рекламы на фб",
-      "video": "3OlDQjO-MSw"
+      "video": "3OlDQjO-MSw",
+      "image": "img/rev-shir.png"
     },
     {
       "name": "Римма Егорова",
       "niche": "Таймменджмент",
-      "video": "nMtm_iBYl5M"
+      "video": "nMtm_iBYl5M",
+      "image": "img/rev-egorova.png"
     },
     {
       "name": "Татьяна Яценко",
       "niche": "Курсы физики и математики",
-      "video": "3v73YiDLQts"
+      "video": "3v73YiDLQts",
+      "image": "img/rev-yacenko.png"
     },
     {
       "name": "Виталий Диброва",
       "niche": "Школа продажи товаров на Amazon",
-      "video": "Q0wDvr2nKro"
+      "video": "Q0wDvr2nKro",
+      "image": "img/rev-dibrova.png"
     }
   ]
 %}
@@ -47,7 +52,8 @@
       {% for item in items %}
         <div class="reviews-item">
           <div class="reviews-item__header">
-            <iframe class="reviews-item__iframe" src="https://www.youtube.com/embed/{{item.video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            {{landing.image(item.image, item.name|striptags, "reviews-item__image")}}
+            <button class="reviews-item__button" data-action="modal" data-open="#modal-reviews" data-video="https://www.youtube.com/embed/{{item.video}}"></button>
           </div>
           <div class="reviews-item__body">
             <p class="reviews-item__body-name">{{item.name}}</p>
@@ -58,3 +64,13 @@
     </div>
   </div>
 </section>
+<div class="modal" id="modal-reviews">
+  <div class="modal__box modal__box_medium modal__box_transparent">
+    <div class="modal__header">
+      <button class="modal__close" data-close="modal">&times;</button>
+    </div>
+    <div class="modal__body">
+      <div class="modal__video"></div>
+    </div>
+  </div>
+</div>
