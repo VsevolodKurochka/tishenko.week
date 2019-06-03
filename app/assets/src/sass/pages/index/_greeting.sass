@@ -117,6 +117,7 @@ $banner-default-offset: 25px
 			+mb(100px)
 
 		&_offset-small
+			+mb(30px)
 			&:before
 				+size(2px, 45px)
 				+min(md)
@@ -161,6 +162,7 @@ $banner-default-offset: 25px
 		+pl(30px)
 		+lh(1.1)
 		+mb(30px)
+		+fs(14px)
 
 		&:before
 			content: ""
@@ -175,11 +177,6 @@ $banner-default-offset: 25px
 		+min(md)
 			+fs(16px)
 			margin: -90px 0 60px 130px
-
-	&__widget
-		.wepster-portal-form
-			+min(lg)
-				height: 485px !important
 
 	&__form_fluid
 		+min(lg)
@@ -269,3 +266,31 @@ $banner-default-offset: 25px
 			+min(md)
 				+pl($banner-md-offset)
 				+fs(24px)
+
+	&_full-height
+		+min(lg)
+			+h(100vh)
+			padding: 0
+			+d(flex)
+			+ai(center)
+			+jc(center)
+
+	&_full-height &
+		&__thanks
+			+min(md)
+				+mt(-20px)
+		&__container_small
+			&:before
+				+max(sm)
+					+h(320px)
+				+min(lg)
+					+h(1200px)
+					+t(-875px)
+
+		&__title-highlight
+			+min(lg)
+				+fs(150%)
+
+		&__subtitle_offset-small
+			+min(md)
+				+fs(20px)
