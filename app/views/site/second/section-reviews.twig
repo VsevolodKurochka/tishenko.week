@@ -1,0 +1,76 @@
+{% import 'macros/macros.landing.twig' as landing %}
+{% 
+  set items = [
+    {
+      "name": "Алексей Лысков",
+      "niche": "печной бизнес",
+      "video": "45Sw8Ai3Ivo",
+      "image": "img/rev-liskov.png"
+    },
+    {
+      "name": "Илья Ширяев",
+      "niche": "настройка рекламы на фб",
+      "video": "3OlDQjO-MSw",
+      "image": "img/rev-shir.png"
+    },
+    {
+      "name": "Римма Егорова",
+      "niche": "Таймменджмент",
+      "video": "nMtm_iBYl5M",
+      "image": "img/rev-egorova.png"
+    },
+    {
+      "name": "Татьяна Яценко",
+      "niche": "Курсы физики и математики",
+      "video": "3v73YiDLQts",
+      "image": "img/rev-yacenko.png"
+    },
+    {
+      "name": "Виталий Диброва",
+      "niche": "Школа продажи товаров на Amazon",
+      "video": "Q0wDvr2nKro",
+      "image": "img/rev-dibrova.png"
+    }
+  ]
+%}
+<section class="section reviews" id="section-reviews">
+  <div class="container">
+    {{
+      landing.header(
+        'reviews__header', 
+        {
+          'text': 'Отзывы<br>участников ',
+          'class': 'reviews__header-title'
+        },
+        {
+          'text': 'мастер-классов и длительных программ <br>обучения Liftmarketing Group',
+          'class': 'reviews__header-subtitle'
+        }
+      )
+    }}
+    <div class="reviews-carousel owl-carousel">
+      {% for item in items %}
+        <div class="reviews-item">
+          <div class="reviews-item__header">
+            {{landing.image(item.image, item.name|striptags, "reviews-item__image")}}
+            <button class="reviews-item__button" data-action="modal" data-open="#modal-reviews" data-video="https://www.youtube.com/embed/{{item.video}}"></button>
+          </div>
+          <div class="reviews-item__body">
+            <p class="reviews-item__body-name">{{item.name}}</p>
+            <p class="reviews-item__body-niche">{{item.niche}}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<div class="modal" id="modal-reviews">
+  <div class="modal__box modal__box_medium modal__box_transparent">
+    <div class="modal__header">
+      <button class="modal__close" data-close="modal">&times;</button>
+    </div>
+    <div class="modal__body">
+      <div class="modal__video"></div>
+    </div>
+  </div>
+</div>

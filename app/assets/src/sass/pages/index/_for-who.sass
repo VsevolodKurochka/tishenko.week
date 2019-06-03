@@ -8,15 +8,20 @@
 			+min(md)
 				+fs(45px)
 			+r()
-			&:after
-				+pseudo('', null, null, 14px, -3px)
-				+size(44px, 5px)
-				+bgc($color-black)
-				transform: rotate(30deg)
-				+min(md)
-					bottom: 22px
-					left: -10px
-					+size(80px, 8px)
+			&_line
+				&:after
+					+pseudo('', null, null, 14px, -3px)
+					+size(44px, 5px)
+					+bgc($color-black)
+					transform: rotate(30deg)
+					+min(md)
+						bottom: 22px
+						left: -10px
+						+size(80px, 8px)
+
+			&_fluid
+				+min(sm)
+					flex-basis: 80%
 
 			&-gradient
 				+text-gradient()

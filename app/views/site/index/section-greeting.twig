@@ -1,31 +1,32 @@
 {% import 'macros/macros.landing.twig' as landing %}
 <section class="section greeting" id="section-greeting">
-  <div class="container greeting__container">
+  <div class="container greeting__container greeting__container_small">
     <div class="row greeting__row">
-      <div class="col-12 col-sm-6">
-        <h1 class="greeting__title">
-          <span class="greeting__title-highlight">КАК ЗА НЕДЕЛЮ</span><br>СОЗДАТЬ<br>ОНЛАЙН-ШКОЛУ
+      <div class="col-12 col-sm-5 col-md-6">
+        <div class="greeting__thanks">
+          <p><strong>В благодарность</strong> за интерес к теме<br> развития своего интернет-проекта</p>
+        </div>
+        <h2 class="greeting__subtitle greeting__subtitle_offset-small">2-х дневный интенсив</h2>
+        <h1 class="greeting__title greeting__title_small greeting__title_uppercase">Пошаговый план: 
+          <span class="greeting__title-highlight">Как создать<br>онлайн-школу<br>за 7 дней</span>
         </h1>
-        <h2 class="greeting__subtitle">и выстроить систему<br>продаж через автовебинар*</h2>
-        <div class="greeting__form">
-          {% include 'components/form.twig' %}
+        <div class="greeting__form greeting__form_fluid">
+          {% include 'components/form-index.twig' %}
         </div>
-        <div class="greeting__bonus">
-          <p>Сразу после <strong>регистрации</strong> вы получите<br> <strong>PDF «Непобедимый интернет- проект. <br>7 простых шагов</strong>», который придет <br>письмом на email.</p>
-        </div>
-        <p class="greeting__info">* 85 % участников, выполнивших все задания, выходят на уровень дохода не менее $5 000</p>
       </div>
-      <div class="col-12 col-sm-5">
-        <div class="greeting__banner">
-          <div class="greeting__banner-body">
-
-            <div class="greeting__banner-info">
-              <div class="greeting__banner-bonus"><p>Сразу после <strong>регистрации</strong> вы получите<br> <strong>PDF «Непобедимый интернет- проект. <br>7 простых шагов</strong>», который придет <br>письмом на email.</p></div>
-              <p class="greeting__banner-title">Бесплатный двухдневный онлайн-интенсив от основателей LiftMarketing Group</p>
-              <p class="greeting__banner-subtitle">Регистрируйтесь на бесплатное участие в онлайн-интенсиве и, пройдя всего 2 вебинара, получите пошаговое руководство по созданию прибыльной онлайн-школы и выводу существующей на высокий уровень дохода.</p>
-            </div>
-            <p class="greeting__banner-date"><span class="js-day-one"></span> и <span class="js-day-two"></span> <span class="js-month"></span></p>
-          </div>
+      <div class="col-12 col-sm-7 col-md-5">
+        <div class="greeting__widget">
+          <!-- leeloo init code -->
+          <script>
+          window.LEELOO = function(){
+              window.LEELOO_INIT = { id: '594420d04dcec400191f61d8' };
+              var js = document.createElement('script');
+              js.src = 'https://app.leeloo.ai/init.js';
+              document.getElementsByTagName('head')[0].appendChild(js);
+          }; LEELOO();
+          </script>
+          <!-- end leeloo init code -->
+          <div class="wepster-hash-xn09dr"></div>
         </div>
       </div>
     </div>

@@ -1,0 +1,59 @@
+{% import "macros/macros.form.twig" as form %}
+{%
+  set inputs = [
+    {
+      'name': 'formParams[phone]',
+      'value': '',
+      'type': 'tel',
+      'attributes': {
+        'required': 'required',
+        'placeholder': 'Укажите ваш телефон',
+        'class': 'form__control'
+      }
+    }
+  ]
+%}
+{%
+  set hidden_inputs = [
+    {
+      'name': 'formParams[setted_offer_id]',
+    },
+    {
+      'name': 'formParams[allowOtherUser]',
+    },
+    {
+      'name': '__gc__internal__form__helper'
+    },
+    {
+      'name': 'requestTime'
+    },
+    {
+      'name': 'requestSimpleSign'
+    }
+  ]
+%}
+<form action="https://edu.liftmarketing.pro/pl/lite/block-public/process-html?id=226791504" class="form form_white form_block" method="POST">
+  {% for input in hidden_inputs %}
+    {{ form.input(input.name, '', 'hidden') }}
+  {% endfor %}
+  <div class="form__content">
+    {% for input in inputs %}
+      <div class="form__row form__row_line {{input.customWrapperClass}}">
+        {{ form.input(input.name, input.value, input.type, input.attributes) }}
+        <span class="form__line"></span>
+      </div>
+    {% endfor %}
+    <div class="form__row form__row_fluid">
+      {{ 
+        form.button(
+          'submit', 
+          'form__submit form__submit_fluid btn btn_landing btn_brand-2-gradient', 
+          'Получить SMS-напоминание', 
+          {
+            'onclick': "if(window['btnprs5cf53d034f0b2']){return false;}window['btnprs5cf53d034f0b2']=true;setTimeout(function(){window['btnprs5cf53d034f0b2']=false},6000);return true;"
+          }
+        ) 
+      }}
+    </div>
+  </div>
+</form>

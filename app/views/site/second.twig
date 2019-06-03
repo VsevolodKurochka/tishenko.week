@@ -10,10 +10,6 @@
 {{ macros.meta(title, description, image, url) }}
 {% endblock %}
 
-{% block nav %}
-{% include 'blocks/nav-index.twig' %}
-{% endblock %}
-
 {% block css %}
 {{ macros.css("css/style.min.css") }}
 {% endblock %}
@@ -23,15 +19,15 @@
 {% endblock %}
 
 {% block content %}
-{% include 'site/index/section-greeting.twig' %}
-{% include 'site/index/section-programm.twig' %}
-{% include 'site/index/section-for-who.twig' %}
-{% include 'site/index/section-authors.twig' %}
-{% include 'site/index/section-end.twig' %}
-{#% include 'site/index/section-instruction.twig' %#}
-{#% include 'site/index/section-now.twig' %#}
-{% include 'site/index/section-reviews.twig' %}
-{% include 'site/index/section-registration.twig' %}
+{% include 'site/second/section-greeting.twig' %}
+{% include 'site/second/section-programm.twig' %}
+{% include 'site/second/section-for-who.twig' %}
+{% include 'site/second/section-authors.twig' %}
+{% include 'site/second/section-instruction.twig' %}
+{% include 'site/second/section-now.twig' %}
+{% include 'site/second/section-reviews.twig' %}
+{% include 'site/second/section-end.twig' %}
+{% include 'site/second/section-registration.twig' %}
 {% endblock %}
 
 {% block footer %}

@@ -22,7 +22,7 @@ $banner-default-offset: 25px
 			+max(sm)
 				left: -45%
 				top: -80px
-				+size(calc(130% + 65px), 255px)
+				+size(calc(130% + 65px), 360px)
 			+min(xs)
 				+max(sm)
 					+h(315px)
@@ -36,6 +36,15 @@ $banner-default-offset: 25px
 
 			+min(lg)
 				+size(1200px, 500px)
+
+		&_small
+			&:before
+				+min(sm)
+					+h(450px)
+				+min(md)
+					+h(385px)
+				+min(lg)
+					+h(450px)
 
 	&__row
 		+min(sm)
@@ -56,8 +65,27 @@ $banner-default-offset: 25px
 		+min(lg)
 			+fs(64px)
 
+		&_uppercase
+				+tt(uppercase)
+
 		&-highlight
 			+text-gradient()
+
+		&_small
+			+fs(15px)
+			+mb(40px)
+			+min(sm)
+				+mb(45px)
+				+fs(20px)
+			+min(md)
+				+fs(25px)
+				+mb(50px)
+			+min(lg)
+				+fs(30px)
+				+mb(75px)
+		&_small &-highlight
+			+d(block)
+			+fs(190%)
 
 	&__subtitle
 		+r()
@@ -88,6 +116,16 @@ $banner-default-offset: 25px
 			+fs(30px)
 			+mb(100px)
 
+		&_offset-small
+			&:before
+				+size(2px, 45px)
+				+min(md)
+					+size(4px, 60px)
+			+min(xs)
+				+mb(30px)
+			+min(md)
+				+pl(30px)
+
 	&__form
 		+mb(30px)
 		+min(xs)
@@ -117,6 +155,39 @@ $banner-default-offset: 25px
 			object-fit: contain
 			+min(md)
 				+size(48px, 51px)
+
+	&__thanks
+		+r()
+		+pl(30px)
+		+lh(1.1)
+		+mb(30px)
+
+		&:before
+			content: ""
+			+a(5px, null, null, 0)
+			+size(20px)
+			+bgi('../img/greeting-bonus.png')
+
+		+max(md)
+			br
+				+d(none)
+
+		+min(md)
+			+fs(16px)
+			margin: -90px 0 60px 130px
+
+	&__widget
+		.wepster-portal-form
+			+min(lg)
+				height: 485px !important
+
+	&__form_fluid
+		+min(lg)
+			+w(420px)
+
+		.form__control
+			+w(100%)
+			+ta(center)
 
 	&__banner
 		+d(flex)
