@@ -34,7 +34,7 @@
     "gulp-notify": "^3.2.0",
     "gulp-progressive-css": "^2.1.0",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^3.2.1",
+    "gulp-sass": "^5.1.0",
     "gulp-sass-glob": "^1.0.9",
     "gulp-uglify": "^3.0.1"
   },
